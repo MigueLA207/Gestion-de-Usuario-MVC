@@ -1,0 +1,42 @@
+﻿@model TestMVC.Models.User
+
+
+
+<div class="container ">
+<div class="row justify-content-center">
+<div class="col-md-5 mt-3 border p-3 rounded bg-white shadow-lg">
+<h2 class="text-center">Editar Usuario</h2>
+
+<form  method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Nombres</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label">Apellidos</label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Mail" class="form-label">Correo</label>
+        <input asp-for="Mail" class="form-control" />
+        <span asp-validation-for="Mail" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label">Telefono</label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Guardar Cambios</button>
+</form>
+</div>
+</div>
+</div>

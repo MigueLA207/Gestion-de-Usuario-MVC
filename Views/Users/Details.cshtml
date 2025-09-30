@@ -1,0 +1,12 @@
+﻿@model TestMVC.Models.User
+
+<h2 class="mt-5">Detalles del Usuario</h2>
+
+<ul class="list-group mb-3">
+    <li class="list-group-item"><strong>ID:</strong> @Model.Id</li>
+    <li class="list-group-item"><strong>Nombre:</strong> @Model.Name</li>
+    <li class="list-group-item"><strong>Apellido:</strong> @Model.LastName</li>
+    <li class="list-group-item"><strong>Correo:</strong> @Model.Mail</li>
+</ul>
+
+<a asp-controller="Users" asp-action="Index" class="btn btn-info">Volver</a>
