@@ -31,10 +31,11 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="ExpYears" class="form-label">Años de experiencia</label>
-                    <input asp-for="ExpYears" type="number" class="form-control" id="Phone" required autocomplete="off">
+                    <label asp-for="ExpYears" class="form-label">Años de experiencia</label>
+                    <input asp-for="ExpYears" type="number" class="form-control" autocomplete="off" />
                     <span asp-validation-for="ExpYears" class="text-danger"></span>
                 </div>
+
 
                 <button type="submit" class="btn btn-primary w-100">Agregar Mesero</button>
             </form> 

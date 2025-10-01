@@ -44,5 +44,10 @@ background: radial-gradient(circle, rgba(174, 238, 204, 1) 0%, rgba(148, 232, 23
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-</body>
+    
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+    </body>
 </html>

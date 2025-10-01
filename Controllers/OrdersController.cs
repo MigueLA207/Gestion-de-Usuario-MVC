@@ -12,5 +12,14 @@ public class OrdersController : Controller
         _context = context;
     }
     
-    
+    public IActionResult Index()
+    {
+        // var orders = _context.Orders.ToList();
+        var viewModel = new ViewModel.OrderC
+        {
+            Orders = _context.Orders.ToList(),
+            Users = _context.Users.ToList()
+        };
+        return View(viewModel);
+    }
 }
