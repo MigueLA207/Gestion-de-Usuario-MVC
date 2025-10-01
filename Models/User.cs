@@ -8,6 +8,8 @@ public class User
     public string Mail { get; set; }
     public string Phone { get; set; }
     
+    public string FullName => $"{Name} {LastName}";
+    
     public ICollection<Order> Orders { get; set; } = new List<Order>();
     public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
 }

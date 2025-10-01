@@ -1,0 +1,40 @@
+﻿@model TestMVC.ViewModel.OrderCreateVM
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 mt-4 border p-3 rounded bg-white shadow-lg">
+            <h2 class="text-center mb-4">Crear Orden</h2>
+
+            <form asp-controller="Orders" asp-action="Create" method="post" class="needs-validation" novalidate>
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    <label asp-for="Order.OrderNumber" class="form-label">Número de Orden</label>
+                    <input asp-for="Order.OrderNumber" class="form-control" />
+                    <span asp-validation-for="Order.OrderNumber" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Order.Date" class="form-label">Fecha</label>
+                    <input asp-for="Order.Date" type="date" class="form-control" />
+                    <span asp-validation-for="Order.Date" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Order.IdClient" class="form-label">Cliente</label>
+                    <select asp-for="Order.IdClient" class="form-select"
+                            asp-items="@(new SelectList(Model.Users, "Id", "FullName"))">
+                        <option value="">-- Selecciona un cliente --</option>
+                    </select>
+                    <span asp-validation-for="Order.IdClient" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Crear Orden</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

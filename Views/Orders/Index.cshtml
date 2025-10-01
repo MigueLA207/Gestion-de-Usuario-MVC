@@ -1,7 +1,7 @@
 @model TestMVC.ViewModel.OrderC
 
 <h1 class="text-center">Gestion de Ordenes</h1>
-<a  asp-controller="Users" asp-action="Create" class="btn btn-info mb-3">Crear Nueva Orden</a>
+<a  asp-controller="Orders" asp-action="Create" class="btn btn-info mb-3">Crear Nueva Orden</a>
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
@@ -13,18 +13,18 @@
                 <th>Client</th>
                 </thead>
                 <tbody>
-                @foreach (var Order in Model.Orders)
+                @foreach (var order in Model.Orders)
                 {
                     <tr>
-                        <td>@Order.Id</td>
-                        <td>@Order.OrderNumber</td>
-                        <td>@Order.Date</td>
-                        <td>@Order.Client.Name @Order.Client.LastName</td>
+                        <td>@order.Id</td>
+                        <td>@order.OrderNumber</td>
+                        <td>@order.Date</td>
+                        <td>@order.Client.Name @order.Client.LastName</td>
                         <td>
                             <div class="d-flex flex-column flex-sm-row gap-2">
-                                <a asp-controller="Order" asp-action="Details" asp-route-id="@Order.Id" class="btn btn-info btn-sm">Detalles</a>
-                                @* <a asp-controller="Users" asp-action="Edit" asp-route-id="@Order.Id" class="btn btn-warning btn-sm">Editar</a> *@
-                                @* <a asp-controller="Users" asp-action="Delete" asp-route-id="@Order.Id" class="btn btn-danger btn-sm">Eliminar</a> *@
+                                <a asp-controller="Orders" asp-action="Details" asp-route-id="@order.Id" class="btn btn-info btn-sm">Detalles</a>
+                                <a asp-controller="Orders" asp-action="Edit" asp-route-id="@order.Id" class="btn btn-warning btn-sm">Editar</a>
+                                <a asp-controller="Orders" asp-action="Delete" asp-route-id="@order.Id" class="btn btn-danger btn-sm">Eliminar</a>
                             </div>
                         </td>
                     </tr>
