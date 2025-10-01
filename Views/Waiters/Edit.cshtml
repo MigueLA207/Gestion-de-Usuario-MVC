@@ -1,13 +1,11 @@
-﻿@model TestMVC.Models.User
-                            
-
+@model TestMVC.Models.Waiter
 
 <div class="container ">
     <div class="row justify-content-center">
         <div class="col-md-5 mt-3 border p-3 rounded bg-white shadow-lg">
-            <h2 class="text-center">Editar Usuario</h2>
+            <h2 class="text-center">Editar Mesero</h2>
 
-            <form asp-action="Edit" asp-controller="Users" asp-route-id="@Model.Id" method="post">
+            <form asp-controller="Waiters" asp-action="Edit" asp-route-id="@Model.Id" method="post">
                 <input type="hidden" asp-for="Id" />
              
                 <div class="mb-3">
@@ -21,17 +19,21 @@
                     <input asp-for="LastName" class="form-control" />
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
-
+                
                 <div class="mb-3">
-                    <label asp-for="Mail" class="form-label">Correo</label>
-                    <input asp-for="Mail" class="form-control" />
-                    <span asp-validation-for="Mail" class="text-danger"></span>
+                    <label asp-for="Turn" class="form-label">Turno</label>
+                    <select asp-for="Turn" class="form-select" id="Turn" required>
+                        <option value="Mañana">Mañana</option>
+                        <option value="Tarde">Tarde</option>
+                        <option value="Noche">Noche</option>
+                    </select>
                 </div>
+                
 
                 <div class="mb-3">
-                    <label asp-for="Phone" class="form-label">Telefono</label>
-                    <input asp-for="Phone" class="form-control" />
-                    <span asp-validation-for="Phone" class="text-danger"></span>
+                    <label asp-for="ExpYears" class="form-label">Años de experiencia</label>
+                    <input asp-for="ExpYears" class="form-control" />
+                    <span asp-validation-for="ExpYears" class="text-danger"></span>
                 </div>
 
                 <button type="submit" class="btn btn-primary w-100">Guardar Cambios</button>

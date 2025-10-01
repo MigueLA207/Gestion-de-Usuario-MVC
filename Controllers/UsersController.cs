@@ -69,6 +69,7 @@ public class UsersController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult Edit(int id, [Bind("Id,Name,LastName,Mail,Phone")] User user)
     {
+        
         if (id != user.Id)
         {
             return BadRequest();
@@ -124,4 +125,6 @@ public class UsersController : Controller
             }
             return RedirectToAction(nameof(Index));
         }
+        
+        
 }

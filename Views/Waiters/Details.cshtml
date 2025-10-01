@@ -1,0 +1,13 @@
+@model TestMVC.Models.Waiter
+
+<h2 class="mt-5">Detalles del Mesero</h2>
+
+<ul class="list-group mb-3">
+    <li class="list-group-item"><strong>ID:</strong> @Model.Id</li>
+    <li class="list-group-item"><strong>Nombre:</strong> @Model.Name</li>
+    <li class="list-group-item"><strong>Apellido:</strong> @Model.LastName</li>
+    <li class="list-group-item"><strong>Turno:</strong> @Model.Turn</li>
+    <li class="list-group-item"><strong>Años de experiencia:</strong> @Model.ExpYears</li>
+</ul>
+
+<a asp-controller="Waiters" asp-action="Index" class="btn btn-info">Volver</a>
