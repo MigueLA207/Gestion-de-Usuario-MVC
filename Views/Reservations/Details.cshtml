@@ -1,0 +1,14 @@
+@model TestMVC.Models.Reservation
+
+<h2 class="mt-5">Detalles de la reserva</h2>
+
+<ul class="list-group mb-3">
+    <li class="list-group-item"><strong>ID:</strong> @Model.Id</li>
+    <li class="list-group-item"><strong>Nombre:</strong> @Model.Date</li>
+    <li class="list-group-item"><strong>Apellido:</strong> @Model.Hour</li>
+    <li class="list-group-item"><strong>Correo:</strong> @Model.NumberPeople</li>
+    <li class="list-group-item"><strong>Correo:</strong> @Model.Observations</li>
+    <li class="list-group-item"><strong>Cliente:</strong> @Model.Client.FullName</li>
+</ul>
+
+<a asp-controller="Reservations" asp-action="Index" class="btn btn-info">Volver</a>
