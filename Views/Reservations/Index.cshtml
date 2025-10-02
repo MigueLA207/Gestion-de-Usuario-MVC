@@ -1,7 +1,7 @@
 @model IEnumerable<TestMVC.Models.Reservation>
 
 <h1 class="text-center">Gestion de Reservas</h1>
-@* <a  asp-controller="Users" asp-action="Create" class="btn btn-info mb-3">Crear Nuevo usuario</a> *@
+<a  asp-controller="Reservations" asp-action="Create" class="btn btn-info mb-3">Crear Nueva Reserva</a>
 <div class="card">
     <div class="card-body">
         <div class="table-responsive">
@@ -23,8 +23,8 @@
                         <td>
                             <div class="d-flex flex-column flex-sm-row gap-2">
                                 <a asp-controller="Reservations" asp-action="Details" asp-route-id="@reservation.Id" class="btn btn-info btn-sm">Detalles</a>
-                                @* <a asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning btn-sm">Editar</a> *@
-                                @* <a asp-controller="Users" asp-action="Delete" asp-route-id="@user.Id" class="btn btn-danger btn-sm">Eliminar</a> *@
+                                <a asp-controller="Reservations" asp-action="Edit" asp-route-id="@reservation.Id" class="btn btn-warning btn-sm">Editar</a>
+                                <a asp-controller="Reservations" asp-action="Delete" asp-route-id="@reservation.Id" class="btn btn-danger btn-sm">Eliminar</a>
                             </div>
                         </td>
                     </tr>

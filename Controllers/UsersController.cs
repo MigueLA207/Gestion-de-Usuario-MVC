@@ -39,8 +39,17 @@ public class UsersController : Controller
     [ValidateAntiForgeryToken]
     public IActionResult CreateUser([Bind("Name,LastName,Mail,Phone")] User user)
     {
+        bool RepeatedMail = _context.Users.Any(u => u.Mail == user.Mail);
+            
+        if (RepeatedMail)
+        {
+            ModelState.AddModelError("Mail", "Este correo ya está en uso.");
+        }
+        
         if (ModelState.IsValid)
         {
+            
+            
             _context.Users.Add(user);   
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));

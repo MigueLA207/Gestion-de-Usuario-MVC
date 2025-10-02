@@ -14,6 +14,6 @@ namespace TestMVC.Models
         [Required]
         public int IdClient { get; set; } 
         [ValidateNever]
-        public User Client { get; set; }
+        public User Client { get; set; } 
     }
 }

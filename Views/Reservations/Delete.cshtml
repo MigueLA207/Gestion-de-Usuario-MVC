@@ -1,0 +1,22 @@
+@model TestMVC.Models.Reservation
+
+<h2 class="mt-5">Eliminar Reservacion</h2>
+
+<div class="alert alert-warning">
+    <p>¿Estás seguro de que quieres eliminar esta reserva?</p>
+</div>
+
+<ul class="list-group mb-3">
+    <li class="list-group-item"><strong>ID:</strong> @Model.Id</li>
+    <li class="list-group-item"><strong>Orden Number:</strong> @Model.Date</li>
+    <li class="list-group-item"><strong>Fecha:</strong> @Model.Hour</li>
+    <li class="list-group-item"><strong>Cliente:</strong>  @Model.NumberPeople</li>
+    <li class="list-group-item"><strong>Cliente:</strong>  @Model.Client.FullName</li>
+</ul>
+
+<form asp-controller="Reservations" asp-action="Delete" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
